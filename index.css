@@ -1,0 +1,31 @@
+body {
+    background-color: rgb(255, 175, 255);
+    margin: 0;
+}
+
+.LogoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 40px);
+
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.EwyLogo {
+    transform: translateX(-80px);
+
+    width: clamp(100px, 25vw, 350px);
+    height: auto;
+}
+
+.LogoText {
+    transform: translateX(-80px);
+
+    font-size: clamp(30px, 6vw, 90px);
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0;
+}
