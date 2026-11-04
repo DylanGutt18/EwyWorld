@@ -1,23 +1,35 @@
 body {
-    background-color: rgb(255, 175, 255);
+    background: rgb(255, 175, 255) url("images/logo_fundo.png") center / cover no-repeat fixed;
     margin: 0;
 }
 
 .LogoContainer {
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Frame {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: clamp(10px, 3vw, 40px);
 
-    min-height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.6); /* preto 40% */
+
+    position: fixed;
+    inset: 0;              /* cobre toda a viewport */
+    z-index: 1;            /* fica acima do fundo do body */
 }
 
 .EwyLogo {
     transform: translateX(-80px);
 
-    width: clamp(100px, 25vw, 350px);
+    width: clamp(72px, 18vw, 252px);
     height: auto;
 }
 
