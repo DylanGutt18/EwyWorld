@@ -19,7 +19,7 @@ body {
     justify-content: center;
     gap: clamp(10px, 3vw, 40px);
 
-    background-color: rgba(0, 0, 0, 0.6); /* preto 40% */
+    background-color: rgba(0, 0, 0, 0.5); /* preto 40% */
 
     position: fixed;
     inset: 0;              /* cobre toda a viewport */
@@ -27,17 +27,35 @@ body {
 }
 
 .EwyLogo {
-    transform: translateX(-80px);
+    transform: translateX(-50px);
 
     width: clamp(72px, 18vw, 252px);
     height: auto;
 }
 
-.LogoText {
-    transform: translateX(-80px);
+.LuaLogo {
+    position: fixed;
 
-    font-size: clamp(30px, 6vw, 90px);
-    font-weight: bold;
-    white-space: nowrap;
-    margin: 0;
+    width: clamp(85px, 10.2vw, 170px);
+    height: auto;
+
+    left: 79%;
+    bottom: 8%;
+
+    transform: translateX(-50%);
+
+    z-index: 0;
+}
+
+.LogoText {
+    width: clamp(300px, 50.4vw, 780px);
+    height: auto;
+
+    transform: translateX(-140px);
+
+    filter:
+        drop-shadow(0 0 7px #FF9DE2)
+        drop-shadow(0 0 14px #FF77CC)
+        drop-shadow(0 0 27px #E85AAD)
+        drop-shadow(4px 6px 3px rgba(0, 0, 0, 0.5));
 }
