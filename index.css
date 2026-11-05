@@ -51,11 +51,27 @@ body {
     width: clamp(300px, 50.4vw, 780px);
     height: auto;
 
-    transform: translateX(-140px);
-
     filter:
         drop-shadow(0 0 7px #FF9DE2)
         drop-shadow(0 0 14px #FF77CC)
         drop-shadow(0 0 27px #E85AAD)
         drop-shadow(4px 6px 3px rgba(0, 0, 0, 0.5));
+}
+
+.Menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transform: translateX(-140px);
+}
+
+#Start {
+    padding: 12px 40px;
+    font: bold 24px Georgia;
+    color: #F5D4EB;
+    background: #412A4D;
+    border: 3px solid #A88BAF;
+    border-radius: 8px;
+    cursor: pointer;
 }
