@@ -27,7 +27,7 @@ body {
 }
 
 .EwyLogo {
-    transform: translateX(-50px);
+    transform: translateX(50px);
 
     width: clamp(72px, 18vw, 252px);
     height: auto;
@@ -51,6 +51,8 @@ body {
     width: clamp(300px, 50.4vw, 780px);
     height: auto;
 
+    transform: translateX(25px);
+
     filter:
         drop-shadow(0 0 7px #FF9DE2)
         drop-shadow(0 0 14px #FF77CC)
@@ -62,7 +64,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     transform: translateX(-140px);
 }
 
