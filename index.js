@@ -15,6 +15,7 @@ ctx.lineJoin = "round";
 
 // Gerador aleatório reproduzível
 let seed = 12345;
+
 const random = () => {
     seed = seed * 16807 % 2147483647;
     return (seed - 1) / 2147483646;
@@ -40,15 +41,27 @@ t.fillRect(0, 0, 900, 220);
     t.fillStyle = cor;
 
     for (let px = 0; px < 900; px += 6) {
-        t.fillRect(px, inicio + Math.floor(random() * 15) - 7, 6, fim - inicio);
+        t.fillRect(
+            px,
+            inicio + Math.floor(random() * 15) - 7,
+            6,
+            fim - inicio
+        );
     }
 });
 
 // Fragmentos de terra
-const cores = ["#A88BAF", "#795C85", "#412A4D", "#302038", "#65476F"];
+const cores = [
+    "#A88BAF",
+    "#795C85",
+    "#412A4D",
+    "#302038",
+    "#65476F"
+];
 
 for (let i = 0; i < 3500; i++) {
     t.fillStyle = cores[Math.floor(random() * cores.length)];
+
     t.fillRect(
         Math.floor(random() * 900),
         Math.floor(random() * 220),
@@ -87,7 +100,7 @@ t.fillText(texto, x, y);
     ctx.strokeText(texto, x, y);
 });
 
-// Aplicar terra
+// Aplicar textura
 ctx.drawImage(terra, 0, 0);
 
 // Brilho superior
@@ -96,3 +109,27 @@ ctx.strokeStyle = "#B69BBE";
 ctx.lineWidth = 2;
 ctx.strokeText(texto, x, y - 2);
 ctx.globalAlpha = 1;
+
+
+// MENU PRINCIPAL
+
+const start = document.getElementById("Start");
+const gameMenu = document.getElementById("GameMenu");
+const voltar = document.getElementById("Voltar");
+
+const logo = document.querySelector(".EwyLogo");
+const menu = document.querySelector(".Menu");
+
+// Abrir menu
+start.addEventListener("click", () => {
+    logo.hidden = true;
+    menu.hidden = true;
+    gameMenu.hidden = false;
+});
+
+// Voltar para a tela inicial
+voltar.addEventListener("click", () => {
+    gameMenu.hidden = true;
+    logo.hidden = false;
+    menu.hidden = false;
+});

@@ -1,3 +1,4 @@
+
 body {
     background: rgb(255, 175, 255) url("images/logo_fundo.png") center / cover no-repeat fixed;
     margin: 0;
@@ -19,16 +20,15 @@ body {
     justify-content: center;
     gap: clamp(10px, 3vw, 40px);
 
-    background-color: rgba(0, 0, 0, 0.5); /* preto 40% */
+    background-color: rgba(0, 0, 0, 0.5);
 
     position: fixed;
-    inset: 0;              /* cobre toda a viewport */
-    z-index: 1;            /* fica acima do fundo do body */
+    inset: 0;
+    z-index: 1;
 }
 
 .EwyLogo {
     transform: translateX(50px);
-
     width: clamp(72px, 18vw, 252px);
     height: auto;
 }
@@ -43,7 +43,6 @@ body {
     bottom: 8%;
 
     transform: translateX(-50%);
-
     z-index: 0;
 }
 
@@ -65,18 +64,84 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 25px;
+
     transform: translateX(-140px);
 }
 
 #Start {
     padding: 12px 40px;
     font: bold 24px Georgia;
+
     color: #F5D4EB;
     background: #412A4D;
+
     border: 3px solid #A88BAF;
     border-radius: 8px;
+
     cursor: pointer;
 }
+
+#Start:hover {
+    background: #65476F;
+    box-shadow: 0 0 12px #FF77CC;
+}
+
+/* Menu principal */
+
+.GameMenu {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    padding: 35px 50px;
+
+    background: rgba(41, 27, 50, 0.95);
+    border: 3px solid #A88BAF;
+    border-radius: 12px;
+
+    box-shadow: 0 0 25px #FF77CC;
+    z-index: 2;
+}
+
+.GameMenu h2 {
+    font: bold 36px Georgia;
+    color: #F5D4EB;
+
+    text-shadow: 0 0 12px #FF77CC;
+    margin: 0 0 15px;
+}
+
+.GameMenu button {
+    width: 220px;
+    padding: 12px;
+
+    font: bold 22px Georgia;
+    color: #F5D4EB;
+    background: #412A4D;
+
+    border: 2px solid #A88BAF;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.GameMenu button:hover {
+    background: #65476F;
+    box-shadow: 0 0 12px #FF77CC;
+}
+
+/* Ocultar elementos */
+
+.GameMenu[hidden],
+.Menu[hidden],
+.EwyLogo[hidden] {
+    display: none;
+}
+
+/* Responsividade */
 
 @media (max-width: 768px) {
     .Frame {
@@ -104,5 +169,16 @@ body {
     #Start {
         font-size: 20px;
         padding: 10px 30px;
+    }
+
+    .GameMenu {
+        width: 80vw;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    .GameMenu button {
+        width: 100%;
+        font-size: 18px;
     }
 }
