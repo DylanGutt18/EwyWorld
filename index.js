@@ -133,3 +133,33 @@ voltar.addEventListener("click", () => {
     logo.hidden = false;
     menu.hidden = false;
 });
+
+
+
+const iniciar = document.getElementById("Iniciar");
+const intro = document.getElementById("Intro");
+const introText = document.getElementById("IntroText");
+
+const mensagens = [
+    "Ewelyn, o mundo precisa de você...",
+    "o povo Humacaco está dominando todas as terras...",
+    "está na hora de dar um fim ao caos e restaurar a paz."
+];
+
+iniciar.addEventListener("click", () => {
+    intro.style.display = "flex";
+
+    mensagens.forEach((mensagem, index) => {
+        setTimeout(() => {
+            introText.textContent = mensagem;
+
+            introText.style.animation = "none";
+            void introText.offsetWidth;
+            introText.style.animation = "aparecer 2s ease-in";
+        }, index * 7000);
+    });
+
+    setTimeout(() => {
+        introText.style.display = "none";
+    }, mensagens.length * 7000);
+});

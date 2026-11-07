@@ -182,3 +182,28 @@ body {
         font-size: 18px;
     }
 }
+
+
+#Intro {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 999;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#Intro p {
+    color: #F5D4EB;
+    font: bold clamp(20px, 4vw, 40px) Georgia;
+    text-align: center;
+    padding: 20px;
+    animation: aparecer 2s ease-in;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
