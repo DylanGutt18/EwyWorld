@@ -1,0 +1,209 @@
+
+body {
+    background: rgb(255, 175, 255) url("images/logo_fundo.png") center / cover no-repeat fixed;
+    margin: 0;
+}
+
+.LogoContainer {
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 40px);
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+.EwyLogo {
+    transform: translateX(50px);
+    width: clamp(72px, 18vw, 252px);
+    height: auto;
+}
+
+.LuaLogo {
+    position: fixed;
+
+    width: clamp(85px, 10.2vw, 170px);
+    height: auto;
+
+    left: 79%;
+    bottom: 8%;
+
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.LogoText {
+    width: clamp(300px, 50.4vw, 780px);
+    height: auto;
+
+    transform: translateX(25px);
+
+    filter:
+        drop-shadow(0 0 7px #FF9DE2)
+        drop-shadow(0 0 14px #FF77CC)
+        drop-shadow(0 0 27px #E85AAD)
+        drop-shadow(4px 6px 3px rgba(0, 0, 0, 0.5));
+}
+
+.Menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    transform: translateX(-140px);
+}
+
+#Start {
+    padding: 12px 40px;
+    font: bold 24px Georgia;
+
+    color: #F5D4EB;
+    background: #412A4D;
+
+    border: 3px solid #A88BAF;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+#Start:hover {
+    background: #65476F;
+    box-shadow: 0 0 12px #FF77CC;
+}
+
+/* Menu principal */
+
+.GameMenu {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    padding: 35px 50px;
+
+    background: rgba(41, 27, 50, 0.95);
+    border: 3px solid #A88BAF;
+    border-radius: 12px;
+
+    box-shadow: 0 0 25px #FF77CC;
+    z-index: 2;
+}
+
+.GameMenu h2 {
+    font: bold 36px Georgia;
+    color: #F5D4EB;
+
+    text-shadow: 0 0 12px #FF77CC;
+    margin: 0 0 15px;
+}
+
+.GameMenu button {
+    width: 220px;
+    padding: 12px;
+
+    font: bold 22px Georgia;
+    color: #F5D4EB;
+    background: #412A4D;
+
+    border: 2px solid #A88BAF;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.GameMenu button:hover {
+    background: #65476F;
+    box-shadow: 0 0 12px #FF77CC;
+}
+
+/* Ocultar elementos */
+
+.GameMenu[hidden],
+.Menu[hidden],
+.EwyLogo[hidden] {
+    display: none;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .Frame {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .EwyLogo {
+        transform: none;
+        width: 35vw;
+    }
+
+    .Menu {
+        transform: none;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .LogoText {
+        transform: none;
+        width: 90vw;
+        max-width: 500px;
+    }
+
+    #Start {
+        font-size: 20px;
+        padding: 10px 30px;
+    }
+
+    .GameMenu {
+        width: 80vw;
+        padding: 25px;
+        box-sizing: border-box;
+    }
+
+    .GameMenu button {
+        width: 100%;
+        font-size: 18px;
+    }
+}
+
+
+#Intro {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 999;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#Intro p {
+    color: #F5D4EB;
+    font: bold clamp(20px, 4vw, 40px) Georgia;
+    text-align: center;
+    padding: 20px;
+    animation: aparecer 2s ease-in;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
